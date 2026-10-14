@@ -1,0 +1,64 @@
+{
+  "_template": {
+    "name": "agent-report-template",
+    "purpose": "执行 Agent 完成任务、部分完成、失败或被阻塞时回报给协调者的标准输出模板。",
+    "how_to_use": "复制本文件后逐字段填写。本文件中的所有值都是占位示例，不是真实执行结果；任何以 TASK-REPLACE_ME 开头的标识或出现在示例中的证据都必须替换或删除。",
+    "spec": "docs/MULTI_AGENT_COLLABORATION_PROTOCOL.md 第 5 节",
+    "notes": [
+      "status 只能是 completed、partial、blocked、failed。",
+      "tests[].status 只能是 passed、failed、not_run；只有真实运行并观察到结果后才可使用前两者。",
+      "files_changed 只能列真实修改过的路径。",
+      "不适用的字段使用空数组或 null，不要虚构测试证据。",
+      "本文件是模板，不得把其中的示例当作某个任务的实际执行结果。"
+    ]
+  },
+  "task_id": "TASK-REPLACE_ME",
+  "status": "partial",
+  "summary": "REPLACE_ME：用一句话说明结果。",
+  "assumptions": [
+    "REPLACE_ME: 为保证推进而采用的明确假设；没有则留空数组"
+  ],
+  "findings": [
+    "REPLACE_ME: 可复核的事实、路径、版本、数值；没有则留空数组"
+  ],
+  "files_changed": [
+    {
+      "path": "REPLACE_ME: 真实修改过的文件路径",
+      "change": "REPLACE_ME: 做了什么改动",
+      "reason": "REPLACE_ME: 为什么这样改"
+    }
+  ],
+  "artifacts": [
+    "REPLACE_ME: 产出的文件、日志或链接；没有则留空数组"
+  ],
+  "implementation_details": [
+    "REPLACE_ME: 关键命令、设计决策与执行步骤"
+  ],
+  "tests": [
+    {
+      "name": "REPLACE_ME: 测试名称",
+      "status": "not_run",
+      "command": "REPLACE_ME: 实际执行的命令",
+      "evidence": "REPLACE_ME: 真实观察到的输出；未运行时说明未运行原因"
+    }
+  ],
+  "interface_changes": [
+    "REPLACE_ME: 公共接口、数据格式或依赖的变化；没有则留空数组"
+  ],
+  "risks": [
+    "REPLACE_ME: 破坏性变更、安全隐患、未验证项；没有则留空数组"
+  ],
+  "blockers": [
+    "REPLACE_ME: 阻塞项与所需决策；没有则留空数组"
+  ],
+  "git": {
+    "branch": "REPLACE_ME: 实际所在分支",
+    "commit_sha": null,
+    "pull_request_url": null,
+    "working_tree_clean": false
+  },
+  "handoff": {
+    "next_agent": "coordinator",
+    "next_action": "REPLACE_ME: 下一位责任方与一个清晰、可执行的动作。"
+  }
+}
