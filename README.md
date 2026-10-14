@@ -13,12 +13,25 @@
 
 协议第 2 节和第 5 节分别规定了任务输入与执行回报的 JSON 结构。为免每次手写出错，仓库提供两份模板：
 
-- [任务输入模板](templates/task-template.json)：协调者派发任务时填写，字段对应协议第 2 节（task_id、objective、context、constraints、scope、dependencies、deliverables、acceptance_criteria、execution_mode）。
-- [执行报告模板](templates/agent-report-template.json)：执行 Agent 回报时填写，字段对应协议第 5 节（task_id、status、summary、assumptions、findings、files_changed、artifacts、implementation_details、tests、interface_changes、risks、blockers、git、handoff）。
+- [任务输入模板](templates/task-template.json)：协调者派发任务时填写，顶层字段恰好为协议第 2 节的 9 个键——`task_id`、`objective`、`context`、`constraints`、`scope`、`dependencies`、`deliverables`、`acceptance_criteria`、`execution_mode`。
+- [执行报告模板](templates/agent-report-template.json)：执行 Agent 回报时填写，顶层字段恰好为协议第 5 节的 14 个键——`task_id`、`status`、`summary`、`assumptions`、`findings`、`files_changed`、`artifacts`、`implementation_details`、`tests`、`interface_changes`、`risks`、`blockers`、`git`、`handoff`。
 
-**用法：** 复制模板文件后逐字段填写，不要直接在模板上改写并提交。
+两份模板的顶层键与协议严格一一对应，不含任何额外元数据键，可直接作为 schema 校验对象。
 
-**注意：** 模板内的值是占位示例，**不是真实任务，也不是真实执行结果**。凡是以 `REPLACE_ME` 开头的标识或示例证据都必须替换；不适用的字段使用空数组或 `null`，不得保留示例值冒充真实内容。
+### 用法
+
+1. 复制对应的模板文件到目标位置，再逐字段填写；不要直接在模板原文件上改写并提交。
+2. 模板中的每个占位符都是形如 `REPLACE_ME: ...` 的字符串，**必须全部替换**。
+3. 不适用的字段替换为空数组 `[]` 或 `null`，不要删除字段、不要保留占位文本。
+
+### 注意事项
+
+- 模板内的值全部是占位符，**不是真实任务，也不是真实执行结果**。任何以 `REPLACE_ME` 开头的标识、说明或"示例证据"都必须替换。
+- **模板不得未经填写直接提交为真实任务或真实执行报告。** 未替换的占位符会污染验收链路，使协调者无法分辨真实证据与占位文本。
+- `status` 只能取 `completed`、`partial`、`blocked`、`failed` 之一；模板占位值写明了这四个可选值。
+- `tests[].status` 只能取 `passed`、`failed`、`not_run` 之一；**只有真实运行并观察到结果后才可填写 `passed` 或 `failed`**。未运行的测试必须写 `not_run` 并在 `evidence` 中说明原因。
+- 字段值未知时写 `null`，**不得用猜测值冒充已验证状态**。例如模板中 `git.working_tree_clean` 的占位值是 `null`，因为填写时该状态尚未核验；核验后才可改为 `true` 或 `false`。
+- `git.commit_sha`、`git.pull_request_url` 在对应操作尚未发生时应保持 `null`，不得填写虚构的 SHA 或链接。
 
 ## 建议工作流
 

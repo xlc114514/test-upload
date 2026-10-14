@@ -1,27 +1,15 @@
 {
-  "_template": {
-    "name": "task-template",
-    "purpose": "协调者向执行 Agent 派发任务的标准输入模板。",
-    "how_to_use": "复制本文件后逐字段填写。本文件中的所有值都是占位示例，不是真实任务，也不是真实执行结果。任何以 REPLACE_ME 开头或出现在示例中的值都必须替换或删除。",
-    "spec": "docs/MULTI_AGENT_COLLABORATION_PROTOCOL.md 第 2 节",
-    "notes": [
-      "简单任务可省略非必要字段，但不得伪造缺失的上下文。",
-      "路径与版本信息必须准确；不适用时使用空数组或 null，不要编造。",
-      "execution_mode 的权限默认从严；任务指令可明确授权更多操作。",
-      "本文件是模板，不得把其中的示例值当作某个任务的实际内容。"
-    ]
-  },
   "task_id": "TASK-REPLACE_ME",
-  "objective": "REPLACE_ME：用一句话描述需要达成的具体结果，不要只写宽泛主题。",
+  "objective": "REPLACE_ME: 用一句话描述需要达成的具体结果，不要只写宽泛主题。",
   "context": {
     "repository": "REPLACE_ME: owner/repo",
-    "local_repository_path": "REPLACE_ME: 本地仓库绝对路径，例如 D:\\path\\to\\repo",
+    "local_repository_path": "REPLACE_ME: 本地仓库绝对路径",
     "base_branch": "REPLACE_ME: 例如 main",
     "relevant_files": [
       "REPLACE_ME: 与本任务相关的文件路径"
     ],
     "related_decisions": [
-      "REPLACE_ME: 已生效的既有决策；没有则留空数组"
+      "REPLACE_ME: 已生效的既有决策；没有则替换为空数组 []"
     ]
   },
   "constraints": [
@@ -32,10 +20,12 @@
       "REPLACE_ME: 允许修改的路径"
     ],
     "forbidden_paths": [
-      "REPLACE_ME: 禁止修改的路径；没有则留空数组"
+      "REPLACE_ME: 禁止修改的路径；没有则替换为空数组 []"
     ]
   },
-  "dependencies": [],
+  "dependencies": [
+    "REPLACE_ME: 必须先完成的任务 ID；没有则替换为空数组 []"
+  ],
   "deliverables": [
     "REPLACE_ME: 需要交付的文件、补丁、日志或说明"
   ],
