@@ -1,0 +1,51 @@
+{
+  "task_id": "TASK-REPLACE_ME",
+  "status": "REPLACE_ME: completed | partial | blocked | failed",
+  "summary": "REPLACE_ME: 用一句话说明结果。",
+  "assumptions": [
+    "REPLACE_ME: 为保证推进而采用的明确假设；没有则替换为空数组 []"
+  ],
+  "findings": [
+    "REPLACE_ME: 可复核的事实、路径、版本、数值；没有则替换为空数组 []"
+  ],
+  "files_changed": [
+    {
+      "path": "REPLACE_ME: 真实修改过的文件路径",
+      "change": "REPLACE_ME: 做了什么改动",
+      "reason": "REPLACE_ME: 为什么这样改"
+    }
+  ],
+  "artifacts": [
+    "REPLACE_ME: 产出的文件、日志或链接；没有则替换为空数组 []"
+  ],
+  "implementation_details": [
+    "REPLACE_ME: 关键命令、设计决策与执行步骤"
+  ],
+  "tests": [
+    {
+      "name": "REPLACE_ME: 测试名称",
+      "status": "REPLACE_ME: passed | failed | not_run",
+      "command": "REPLACE_ME: 实际执行的命令",
+      "evidence": "REPLACE_ME: 真实观察到的输出；未运行时说明未运行原因"
+    }
+  ],
+  "interface_changes": [
+    "REPLACE_ME: 公共接口、数据格式或依赖的变化；没有则替换为空数组 []"
+  ],
+  "risks": [
+    "REPLACE_ME: 破坏性变更、安全隐患、未验证项；没有则替换为空数组 []"
+  ],
+  "blockers": [
+    "REPLACE_ME: 阻塞项与所需决策；没有则替换为空数组 []"
+  ],
+  "git": {
+    "branch": "REPLACE_ME: 实际所在分支",
+    "commit_sha": null,
+    "pull_request_url": null,
+    "working_tree_clean": null
+  },
+  "handoff": {
+    "next_agent": "REPLACE_ME: coordinator | implementation_agent | test_agent | integration_agent | user",
+    "next_action": "REPLACE_ME: 下一位责任方与一个清晰、可执行的动作。"
+  }
+}

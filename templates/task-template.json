@@ -1,0 +1,42 @@
+{
+  "task_id": "TASK-REPLACE_ME",
+  "objective": "REPLACE_ME: 用一句话描述需要达成的具体结果，不要只写宽泛主题。",
+  "context": {
+    "repository": "REPLACE_ME: owner/repo",
+    "local_repository_path": "REPLACE_ME: 本地仓库绝对路径",
+    "base_branch": "REPLACE_ME: 例如 main",
+    "relevant_files": [
+      "REPLACE_ME: 与本任务相关的文件路径"
+    ],
+    "related_decisions": [
+      "REPLACE_ME: 已生效的既有决策；没有则替换为空数组 []"
+    ]
+  },
+  "constraints": [
+    "REPLACE_ME: 技术、兼容、安全、性能或范围约束"
+  ],
+  "scope": {
+    "allowed_paths": [
+      "REPLACE_ME: 允许修改的路径"
+    ],
+    "forbidden_paths": [
+      "REPLACE_ME: 禁止修改的路径；没有则替换为空数组 []"
+    ]
+  },
+  "dependencies": [
+    "REPLACE_ME: 必须先完成的任务 ID；没有则替换为空数组 []"
+  ],
+  "deliverables": [
+    "REPLACE_ME: 需要交付的文件、补丁、日志或说明"
+  ],
+  "acceptance_criteria": [
+    "REPLACE_ME: 可被检查或测试的完成条件"
+  ],
+  "execution_mode": {
+    "may_modify_files": false,
+    "may_run_tests": false,
+    "may_commit": false,
+    "may_push": false,
+    "may_merge": false
+  }
+}
